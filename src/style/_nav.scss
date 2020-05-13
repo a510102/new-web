@@ -1,0 +1,57 @@
+@mixin mQ($arg...){
+    @if length($arg) == 1{
+      @media screen and (max-width: nth($arg, 1)){
+        @content;
+      }
+    }
+    @if length($arg) == 2{
+      @media screen and (max-width: nth($arg, 1)) and (min-width: nth($arg, 2)){
+        @content;
+      }
+    }
+  }
+  
+
+@mixin button($bg, $color) {
+    margin-left: 1rem;
+    border: none;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+    background-color: $bg;
+    color: $color;
+    &:hover{
+        background: $color;
+        color: $bg;
+    }
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    padding: 2rem;
+    background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+    @include mQ(1000px){
+        
+    }
+    .nav-title{
+        background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .nav-item-county{
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 0.3rem;
+        input{
+            @include button(#c7eafd, #e8198b);
+            width: 15%;
+        }
+    }
+    .nav-item-categary{
+        input{
+            @include button(#7ce4e4,#330867 )
+        }
+    }
+}
