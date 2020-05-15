@@ -9,17 +9,15 @@ function Mainpage({ news }) {
                         backgroundImage: `url(${item.urlToImage})`,
                         backgroundPosition: 'center',
                         backgroundSize: 'cover',
-                        height: '15rem',
-                        width: '15rem',
                     }
                     return (
                         <li className="news-self" key={i}>
-                            <h3 className="news-title">{item.title}</h3>
+                            <h3 className="news-title">    {item.title}</h3>
                             <div className="news-image" style={newImage}>
                             </div>
-                            <p>{item.author} - {item.publishedAt}</p>
-                            <p>{item.description}</p>
-                            <a href={item.url}>More...</a>
+                            <p className="news-author">{item.author}  {item.publishedAt}</p>
+                            <p className="news-content">{item.description} <a href={item.url} target="_blank">More...</a>
+                            </p>
                         </li>
                     )
                 })

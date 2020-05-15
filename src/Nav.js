@@ -10,29 +10,41 @@ function Nav({ onChangeCategory, onChangeCounty, country }) {
             </h1>
             <div className="nav-items">
                 <div className="nav-item-county">
-                    <h3 className="nav-item-title">國家/ 類別:</h3>
-                    <input type="button" className={country === "tw" ? "active" : ""} value="Taiwan" onClick={() => onChangeCounty('tw')} />
-                    <input type="button" value="USA" className={country === "us" ? "active" : ""} onClick={() => onChangeCounty('us')} />
+                    <h3 className="nav-item-title">國家</h3>
+                    <div className="county-list">
+                        <input
+                            type="button"
+                            className={country === "tw" ? "active" : ""}
+                            value="Taiwan"
+                            onClick={() => onChangeCounty('tw')} />
+                        <input
+                            type="button"
+                            value="USA"
+                            className={country === "us" ? "active" : ""}
+                            onClick={() => onChangeCounty('us')} />
+                    </div>
+
                 </div>
-                <div className="nav-item-categary">
-                    {
-                        categorys.map((category, i) => {
-                            return (
-                                <input
-                                    key={i}
-                                    type="button"
-                                    value={category}
-                                    className={iscategory === category ? "active" : ""}
-                                    onClick={() => {
-                                        setIscategory(category);
-                                        onChangeCategory(category);
-                                    }} />
-                            )
-                        })
-                    }
+                <div className="nav-item-category">
+                    <h3 className="nav-item-title">類別</h3>
+                    <div className="category-list">
+                        {
+                            categorys.map((category, i) => {
+                                return (
+                                    <button
+                                        key={i}
+                                        className={iscategory === category ? 'active' : ''}
+                                        onClick={() => {
+                                            setIscategory(category);
+                                            onChangeCategory(category)
+                                        }}
+                                    >{category}</button>
+                                )
+                            })
+                        }
+                    </div>
                 </div>
             </div>
-
         </nav>
     )
 }

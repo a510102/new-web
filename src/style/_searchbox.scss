@@ -1,4 +1,6 @@
 .searchbox{
+    width: 80vw;
+    margin-left: 20vw;
     height: 15vh;
     display: flex;
     justify-content: center;
@@ -56,8 +58,8 @@
         border: none;
     }
     .searchbox-btn{
-        height: 50%;
-        width: 10vw;
+        padding: 0.2rem;
+        width: 5vw;
         border: none;
         border-radius:0.5rem ;
         font-size: 1.2rem;
