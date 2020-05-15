@@ -18,7 +18,7 @@ function Mainpage({ news }) {
                             <div className="news-image" style={newImage}>
                             </div>
                             <p>{item.author} - {item.publishedAt}</p>
-                            <p>{item.content}</p>
+                            <p>{item.description}</p>
                             <a href={item.url}>More...</a>
                         </li>
                     )

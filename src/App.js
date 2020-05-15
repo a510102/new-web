@@ -47,7 +47,7 @@ function App() {
 
   return (
     <div className="App">
-      <Nav onChangeCategory={onChangeCategory} onChangeCounty={onChangeCounty} />
+      <Nav onChangeCategory={onChangeCategory} onChangeCounty={onChangeCounty} country={country} />
       <SearchBox setKeyword={setKeyword} handleSearchKeyWord={handleSearchKeyWord} />
       <Mainpage news={news} />
     </div>
