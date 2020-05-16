@@ -45,6 +45,11 @@ function Nav({ onChangeCategory, onChangeCounty, country }) {
                     </div>
                 </div>
             </div>
+            <div className="nav-hamburger">
+                <span className="bar"></span>
+                <span className="bar"></span>
+                <span className="bar"></span>
+            </div>
         </nav>
     )
 }

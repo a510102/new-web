@@ -1,83 +1,109 @@
-@mixin displayFC{
-  display: flex;
-  flex-direction: column;
+@mixin active{
+  background: #000;
+    opacity: 1;
 }
 
-@mixin lightUp {
-  filter: grayscale(100%) opacity(0.7);
-  transition: all 0.2s ease;
-    &:hover{
-      filter: grayscale(0%) opacity(1);
-      background: #000;
-    }
-}
-
-@mixin btn($w, $FZ) {
-  width: $w;
-  margin-bottom: 1rem;
-  text-align: center; 
-  border: 2px solid #fff;
+@mixin btn{
+  width: 6rem;
+  border: 1px solid #fff;
+  background: rgba(173, 165, 165, 0.404);
+  color: #fff;
   border-radius: 1rem;
-  color:#fff;
-  background: rgb(119, 119, 119);
-  font-size: $FZ;
-  @include lightUp();
   &:hover{
-    transform: scale(1.1)
-  }
-  @media screen and (max-width:1500px) {
-    font-size: 0.8*$FZ;
+    @include active();
   }
 }
+
 
 .nav-list{
-  width: 20vw;
-  height: 100vh;
-  position: fixed;
+  display: flex;
+  justify-content: space-between;
   padding: 1rem;
-  background: rgb(119, 119, 119);
+  height: 20vh;
+  background-color: rgba(173, 165, 165, 0.404);
   color: #fff;
+
+  .nav-hamburger{
+    display: none;
+    @media screen and (max-width:650px) {
+       width: 3rem;
+      height: 3rem;
+      border: 4px solid #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      border-radius: 0.2rem;
+      .bar{
+        display: block;
+        height: 0.3rem;
+        width: 2rem;
+        background: #fff;
+      }
+    }
+  }
+
+  .nav-items{
+    @media screen and (max-width:650px) {
+      display: none;
+    }
+  }
+ 
   .nav-title{
-    margin:  0 auto 5rem auto;
-    width: 80%;
-    border-radius: 5vw;
-    border: 2px solid #fff;
-    text-align: center;
-    padding: 0.2rem 0;
-    margin-bottom: 20%;
+    display: flex;
+    padding: 0 1rem;
+    justify-content: center;
+    align-items: center; border: 4px solid #fff;
+    border-radius: 2rem;
   }
   .nav-items{
+    width: 35%;
     display: flex;
     justify-content: space-around;
-    @media screen and (max-width:1500px) {
-      flex-direction: column;
-      align-items: center;
+    align-items: center;
+    @media screen  and (max-width: 1000px) {
+      width: 50%;
     }
   }
-  .nav-item-title{
-    margin: auto;
-    width: 5vw;
-    margin-bottom: 1rem;
-    text-align: center; 
-    border: 2px solid #fff;
-    border-radius: 1rem;
+  .nav-item-county
+  ,.nav-item-category{
+    .nav-item-title{
+      padding: 0 0.2rem;
+      border: 2px solid #fff;
+      border-radius: 2rem;
+    }
   }
+
   .county-list{
-    @include displayFC();
+    display: none;
     input{
-      @include btn(5vw,0.8rem); 
+      @include btn();
     }
     .active{
-      background: #000;
+      @include active();
     }
   }
   .category-list{
-    @include displayFC();
+    display: none;
     button{
-      @include btn(9vw, 0.8rem);
-    }
+      @include btn();
+    };
     .active{
-      background: #000;
+      @include active();
+    }
+  }
+  .nav-item-county  {
+    position: relative;
+    &:hover .county-list{
+      position: absolute;
+      display: block;
+    }
+  }
+  .nav-item-category{
+    position: relative;
+    &:hover  .category-list{
+      position: absolute;
+      display: block;
     }
   }
 }
