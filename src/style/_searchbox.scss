@@ -67,5 +67,11 @@
             color: #58e091;
             background: rgb(39, 96, 230);
         }
+        @media screen  and (max-width:1000px) {
+            width: 10vw;
+        }
+        @media screen and (max-width:550px) {
+            width: 15vw;
+        }
     }
 }

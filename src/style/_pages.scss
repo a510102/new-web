@@ -1,0 +1,25 @@
+.pages{
+    width: 40vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    @media screen and (max-width:800px ) {
+        width: 60vw;
+    }
+    @media screen  and (max-width:480px) {
+        width: 100vw;
+    }
+    button{
+        border: none;
+        border-radius: 50%;
+        background: rgb(138, 136, 136);
+        color: #FFF;
+        padding: 0.5rem; 
+        &:hover{
+            background: #000;
+        }
+    }
+   .active{
+    background: #000;
+   }
+}

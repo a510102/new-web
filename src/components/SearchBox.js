@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SearchBox({ setKeyword, handleSearchKeyWord }) {
+function SearchBox({ keyword, setKeyword, handleSearchKeyWord }) {
     return (
         <form
             className="searchbox"
@@ -10,6 +10,7 @@ function SearchBox({ setKeyword, handleSearchKeyWord }) {
                     id="searchbox-input"
                     className="searchbox-input"
                     type="text"
+                    value={keyword}
                     onChange={e => setKeyword(e.target.value)} required />
                 <label
                     htmlFor="searchbox-input" className="searchbox-input-label">

@@ -1,17 +1,22 @@
 .news-list{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
-    padding: 1rem;
-    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr) );
+    padding: 0.5rem;
+    grid-gap: 0.5rem;
 }
 .news-title{
-    height: 10vh;
-     margin-bottom: 0.5rem;
-     font-size: 0.9rem;
+    height: 4rem;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
 }
+.news-self{
+    overflow: hidden;
+}
+
 .news-image{
     width: 100%;
     height: 25rem;
+    margin-bottom: 0.5rem;
 }
 
 .news-author{
@@ -20,4 +25,5 @@
 
 .news-content{
     font-size: 0.8rem;
+    line-height: 1.2rem;
 }

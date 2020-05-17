@@ -6,7 +6,7 @@ function Mainpage({ news, isLoading }) {
             {!isLoading ?
                 news.length === 0 ?
                     <div>
-                        <h3><i class="fas fa-exclamation-triangle fa-fw"></i>....沒有符合的新聞,請重新搜尋 </h3>
+                        <h3><i className="fas fa-exclamation-triangle fa-fw"></i>....沒有符合的新聞,請重新搜尋 </h3>
                     </div> :
                     news.map((item, i) => {
                         const newImage = {
@@ -20,15 +20,15 @@ function Mainpage({ news, isLoading }) {
                                 <div className="news-image" style={newImage}>
                                 </div>
                                 <p className="news-author">{item.author}  {item.publishedAt}</p>
-                                <p className="news-content">{item.description} <a href={item.url}
+                                <p className="news-content">{item.description}</p>
+                                <a href={item.url}
                                     target="_blank"
                                     rel="noopener noreferrer">More...</a>
-                                </p>
                             </li>
                         )
                     }) : (
                     <div>
-                        <h3>Loading <i class="fas fa-spinner fa-fw fa-spin"></i></h3>
+                        <h3>Loading <i className="fas fa-spinner fa-fw fa-spin"></i></h3>
                     </div>)
             }
         </ul >

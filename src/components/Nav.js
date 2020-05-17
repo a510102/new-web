@@ -1,13 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-function Nav({ onChangeCategory, onChangeCounty, country }) {
+function Nav({ onChangeCategory, onChangeCounty, country, categoryD }) {
     const categorys = ["business", "entertainment", "general", "health", "science", "sports", "technology"];
-    const [iscategory, setIscategory] = useState('');
     return (
         <nav className="nav-list">
             <h1 className="nav-title">
                 My News
             </h1>
+            <div className="nav-hamburger">
+                <span className="bar"></span>
+                <span className="bar"></span>
+                <span className="bar"></span>
+            </div>
             <div className="nav-items">
                 <div className="nav-item-county">
                     <h3 className="nav-item-title">國家</h3>
@@ -33,11 +37,9 @@ function Nav({ onChangeCategory, onChangeCounty, country }) {
                                 return (
                                     <button
                                         key={i}
-                                        className={iscategory === category ? 'active' : ''}
-                                        onClick={() => {
-                                            setIscategory(category);
-                                            onChangeCategory(category)
-                                        }}
+                                        className={categoryD === category ? 'active' : ''}
+                                        onClick={() =>
+                                            onChangeCategory(category)}
                                     >{category}</button>
                                 )
                             })
@@ -45,11 +47,7 @@ function Nav({ onChangeCategory, onChangeCounty, country }) {
                     </div>
                 </div>
             </div>
-            <div className="nav-hamburger">
-                <span className="bar"></span>
-                <span className="bar"></span>
-                <span className="bar"></span>
-            </div>
+
         </nav>
     )
 }

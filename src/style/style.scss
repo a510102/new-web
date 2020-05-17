@@ -2,6 +2,7 @@
 @import 'nav';
 @import 'searchbox';
 @import 'mainpage';
+@import 'pages';
 
 *{
     font-family: 'Roboto Mono', monospace;
@@ -9,7 +10,7 @@
 body{
     background-image: linear-gradient(to bottom, #cfd9df 0%, #e2ebf0 100%);
 }
- .App {
-     max-width: 1480px;
-    margin: auto;
- }
+//  .App {
+//      max-width: 1480px;
+//     margin: auto;
+//  }
